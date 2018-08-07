@@ -1,0 +1,12 @@
+coverage.txt
+*.exe
+*.dll
+*.so
+*.dylib
+
+*.test
+*.out
+
+*.bak
+*.swo
+*.swp
