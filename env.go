@@ -1,7 +1,7 @@
 // Package envfile contains functions to (un)marshal EnvironmentFile to/from Go
 // types.
 //
-// This package is using the same 'style' as the the stardard library
+// This package is using the same 'style' as the the standard library
 // encoding/json package for (un)marshaling EnvironmentFile (dot env) syntax.
 package envfile
 
@@ -58,7 +58,7 @@ func (e ErrorLineParsing) Error() string {
 //   Field int `json:",omitempty"`
 //
 // Only string fields are supported and it will return a ErrorUnsupportedType
-// when fields with other types are not explicilty ignored.
+// when fields with other types are not explicitly ignored.
 func Marshal(v interface{}) ([]byte, error) {
 	var buf bytes.Buffer
 	t := reflect.TypeOf(v)
@@ -87,7 +87,7 @@ func Marshal(v interface{}) ([]byte, error) {
 	return buf.Bytes(), nil
 }
 
-// Unmarshal parses the environmentfile encoded data and stores the result in
+// Unmarshal parses the EnvironmentFile encoded data and stores the result in
 // the value pointed to by v.
 func Unmarshal(data []byte, v interface{}) error {
 	r := bytes.NewReader(data)
