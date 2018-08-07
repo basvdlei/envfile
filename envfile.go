@@ -41,21 +41,20 @@ func (e ErrorLineParsing) Error() string {
 //
 // Examples of struct field tags:
 //
-//   // Field appears in EnvironmentFile as key "MY_NAME".
+//   // Field appears in EnvironmentFile as variable "MY_NAME".
 //   Field string `env:"MY_NAME"`
 //
-//   // Field appears in EnvironmentFile as key "FIELD".
+//   // Field appears in EnvironmentFile as variable "FIELD".
 //   Field string`
 //
-//   // Field appears in JSON as key "myName" and
-//   // the field is omitted from the object if its value is empty,
-//   // as defined above.
-//   Field string `json:"myName,omitempty"`
+//   // Field appears in EnvironmentFile as variable "MYNAME" and
+//   // the field is omitted from the object if its value is empty.
+//   Field string `env:"MYNAME,omitempty"`
 //
-//   // Field appears in JSON as key "Field" (the default), but
+//   // Field appears in EnvironmentFile as variable "FIELD" (the default), but
 //   // the field is skipped if empty.
 //   // Note the leading comma.
-//   Field int `json:",omitempty"`
+//   Field int `env:",omitempty"`
 //
 // Only string fields are supported and it will return a ErrorUnsupportedType
 // when fields with other types are not explicitly ignored.
